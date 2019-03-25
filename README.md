@@ -1,2 +1,5 @@
 # SplitFlapClockAndWeather
-An IoT split-flap clock and weather forecast.
+
+Work in Progress.
+
+An IoT split-flap clock with weather forecast.
