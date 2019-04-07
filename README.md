@@ -1,5 +1,5 @@
 # SplitFlapClockAndWeather
 
-Work in Progress.
+## Work in Progress.
 
 An IoT split-flap clock with weather forecast.
