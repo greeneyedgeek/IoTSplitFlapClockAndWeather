@@ -1,4 +1,4 @@
-# SplitFlapClockAndWeather
+# SplitFlapClock
 
 ## Work in Progress.
 
