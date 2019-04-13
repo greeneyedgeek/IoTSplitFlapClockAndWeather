@@ -10,10 +10,6 @@
 	Description:
 
 
-	References:
-	The AVR Microcontroller and Embedded Systems Using Assembly And C. ISBN10 0138003319. ISBN13 9780138003319.
-
-
 	The circuit:
  	*
  	*
