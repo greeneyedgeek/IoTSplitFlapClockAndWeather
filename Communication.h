@@ -47,8 +47,6 @@ typedef uint8_t Delay;
 typedef volatile uint8_t Port;
 typedef uint8_t Mask;
 
-enum{clockwise, counterclockwise};
-
 namespace Communication
 {
 	class UART

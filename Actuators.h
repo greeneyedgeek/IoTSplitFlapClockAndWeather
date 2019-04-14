@@ -32,7 +32,7 @@
 */
 
 #ifndef ACTUATORS_H
-#define SENSORS_H
+#define ACTUATORS_H
 
 #define F_CPU 16000000UL
 
@@ -44,8 +44,6 @@ typedef uint16_t Steps;
 typedef uint8_t Delay;
 typedef volatile uint8_t Port;
 typedef uint8_t Mask;
-
-
 
 enum{clockwise, counterclockwise};
 
@@ -59,8 +57,7 @@ namespace Actuators
 	private:
 		Port* port;
 		Mask mask;
-		static uint8_t port_values[];
-
+		static uint8_t port_values[8];
 	};
 }
 

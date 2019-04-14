@@ -31,7 +31,7 @@
 
 */
 
-#ifndef SENSORS_H
+//#ifndef SENSORS_H
 #define SENSORS_H
 
 #define F_CPU 16000000UL
@@ -53,4 +53,4 @@ namespace Sensors
 	};
 }
 
-#endif // SENSORS_H
+//#endif // SENSORS_H

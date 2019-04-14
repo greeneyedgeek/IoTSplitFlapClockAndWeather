@@ -58,6 +58,7 @@ void Communication::TWI::start()
 {
 	TWCR = (1<<TWINT)|(1<<TWEN)|(1<<TWSTA);
 	while ((TWCR & (1<<TWINT))==0);
+	while((TWSR & 0xF8)!= 0x08);
 }
 
 void Communication::TWI::stop()
@@ -82,6 +83,7 @@ void Communication::TWI::send(unsigned char data)
 	TWDR = data;
 	TWCR = (1<<TWINT)|(1<<TWEN);
 	while ((TWCR & (1<<TWINT))==0);
+	while((TWSR & 0xF8) != 0x28);
 }
 
 unsigned char Communication::TWI::receive(unsigned char isLast)

@@ -33,7 +33,7 @@
 
 #include "Actuators.h"
 
-uint8_t Actuators::Steppers::port_values[] {0x03, 0x01, 0x09, 0x08, 0x0C, 0x04, 0x06, 0x02};
+static uint8_t Actuators::Steppers::port_values[8] = {0x03, 0x01, 0x09, 0x08, 0x0C, 0x04, 0x06, 0x02};
 
 Actuators::Steppers::Steppers(Port* port, Mask mask) :
 	port(port),
@@ -50,7 +50,8 @@ void Actuators::Steppers::rotate(Direction direction, Steps steps, Delay ms)
 				for(uint8_t j = 0; j < 8; j++)
 				{
 					*port = (mask & port_values[j]);
-					_delay_ms(ms);
+					if (ms > 1) {for (uint8_t k = 0; k < ms; k++) {_delay_ms(1);}}
+					else {_delay_ms(1);}
 				}
 
 			}
@@ -59,10 +60,11 @@ void Actuators::Steppers::rotate(Direction direction, Steps steps, Delay ms)
 		case counterclockwise:
 			for(Steps i = 0; i < steps/8; i++)
 			{
-				for(uint8_t j = 7; j >= 0; j--)
+				for(uint8_t j = 0; j < 8; j++)
 				{
-					*port = (mask & port_values[j]);
-					_delay_ms(ms);
+					*port = (mask & port_values[7-j]);
+					if (ms > 1) {for (uint8_t k = 0; k < ms; k++) {_delay_ms(1);}}
+					else {_delay_ms(1);}
 				}
 			}
 		break;

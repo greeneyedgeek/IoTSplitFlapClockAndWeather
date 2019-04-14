@@ -37,22 +37,21 @@
 
 #include "Actuators.h"
 
-#define F_CPU 16000000
+#define F_CPU 16000000UL
 
-namespace
+int main()
 {
-	int main()
-	{
-			DDRB = 0x0F;
-			Actuators::Steppers stepper1(&PORTB, 0x0F);
+		DDRB = 0x0F;
+		Actuators::Steppers stepper1(&PORTB, 0x0F);
 
-			while (1)
-			{
-				stepper1.rotate(clockwise, 4096, 1);
-				_delay_ms(2000);
-				stepper1.rotate(counterclockwise, 4096, 1);
-				_delay_ms(2000);
-			}
-	}
+		while (1)
+		{
+			stepper1.rotate(counterclockwise, 4096, 1);
+			_delay_ms(2000);
+			stepper1.rotate(clockwise, 4096, 1);
+			_delay_ms(2000);
+
+		}
 }
+
 
